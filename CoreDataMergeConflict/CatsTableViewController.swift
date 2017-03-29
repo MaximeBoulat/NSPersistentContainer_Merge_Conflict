@@ -52,8 +52,6 @@ class CatsTableViewController: UITableViewController, NSFetchedResultsController
 			let directoryEnumerator = FileManager.default.enumerator(at: bundlePath, includingPropertiesForKeys: [URLResourceKey.isDirectoryKey, URLResourceKey.nameKey])
 			while let url = directoryEnumerator?.nextObject() as? URL {
 				
-				print("path extension: \(url.pathExtension)")
-				
 				if url.pathExtension == "jpeg" {
 					let imageData = try! Data(contentsOf: url)
 					DataManager.insertPhoto(with: url.lastPathComponent, and: imageData)

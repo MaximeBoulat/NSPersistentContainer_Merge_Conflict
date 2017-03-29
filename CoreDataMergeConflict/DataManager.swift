@@ -68,6 +68,7 @@ struct DataManager {
 		self.persistentContainer.performBackgroundTask { (context) in
 			
 //			context.mergePolicy = NSMergePolicy.overwrite
+//			context.automaticallyMergesChangesFromParent = true
 			
 			let new = Photo(context: context)
 			new.name = name
